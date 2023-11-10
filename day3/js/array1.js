@@ -26,3 +26,10 @@ delete animal[1];  //delete로 삭제시 공간이 남아있음
 for(let i = 0; i < animal.length; i++){
   document.write(animal[i] + " ");
 }
+
+document.write("<br>");
+
+//fon in 문
+for(let ani in animal){
+  document.write(animal[ani] + " ");
+}

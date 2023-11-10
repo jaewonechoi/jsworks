@@ -3,6 +3,7 @@
 
 //제곱수를 계산하는 함수
 //어떤수를 입력받아 제곱하는 함수
+
 /*function square(x){
   let num = x * x;
   return num;   //변수 리턴
