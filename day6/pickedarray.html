@@ -27,39 +27,57 @@
   </section>
 
   <script>
-    let member = 20;  //전체 응모자 수
-    let winner = new Array(5);   //당첨자 수 - 배열로 선언
+    let member = prompt("전체 응모자 수: ", "20");  //전체 응모자 수
+    let winner = prompt("당첨자 수: ");
 
-    document.write("<p>전체 응모자 수: " + member + "명</p>");
-    document.write("<p>당첨자: ");
+    if(member == null || winner == null){
+      document.write("<p>입력이 취소되었습니다.</p>");
+    }else if(isNaN(member) || isNaN(winner)){
+      document.write("<p>숫자를 입력해주세요.</p>");
+    }else{
+      document.write("<p>전체 응모자 수: " + member + "명</p>");
+      document.write("<p>당첨자: ");
 
-    //winners에 배열에 추첨(저장)
-    for(let i = 0; i < winner.length; i++){
-      let pickedOne = Math.floor(Math.random()*member) + 1;
-      winner[i] = pickedOne;
-      //중복 번호가 발생한 경우 그 인덱스에서 재추첨
-      for(let j = 0; j < i; j++){
-        if(winner[j] == winner[i]){
-          i--;
+      member = parseInt(member);
+      winner = parseInt(winner);  //문자를 숫자로 변환
+      let winArray =  new Array(winner);   //당첨자 수 - 배열로 선언
+      
+      //winners에 배열에 추첨(저장)
+      for(let i = 0; i < winArray.length; i++){
+        let pickedOne = Math.floor(Math.random()*member) + 1;
+        winArray[i] = pickedOne;
+        //중복 번호가 발생한 경우 그 인덱스에서 재추첨
+        for(let j = 0; j < i; j++){
+          if(winArray[j] == winArray[i]){
+            i--;
+          }
         }
-      }
+      }   
+    
       //디버깅
       //5 14 14 16 11;
       /*
-      i=0 j = 0, winner[0]=5 0<0 false
-      i=1 j = 0, winner[0]=5 0<1 true
-          j = 1, winner[1]=14 0<1 true
-      i=2 j = 0, winner[1]=5 0<2 true
-          j = 1, winner[1]=5 1<2 true
-          j = 2, winner[2]=14 winner[2] == winner[1]
+      i=0 j = 0, winArray[0]=5 0<0 false
+      
+      i=1 j = 0, winArray[0]=5 0<1 true
+          j = 1, winArray[1]=14 0<1 false
+          
+      i=2 j = 0, winArray[0]=5 0<2 true
+          j = 1, winArray[1]=14 1<2 true
+
+      i=3 j = 0, winArray[0]=5 0<3 true  
+          j = 1, winArray[1]=14 0<3 true  
+          j = 2, winArray[2]=14 winner[2] == winner[1]
+      i=3 재추첨
       */
+      //winner 출력
+      for(let i = 0; i < winArray.length; i++){
+        document.write(winArray[i] + "번, ");
+      }
+      document.write("</p>");
     }
 
-    //winner 출력
-    for(let i = 0; i < winner.length; i++){
-      document.write(winner[i] + "번, ");
-    }
-    document.write("</p>");
+    
   </script>
 </body>
 </html>
