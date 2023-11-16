@@ -2,7 +2,7 @@
 
 //1 ~ 10 자연수를 배열에 저장
 //10개의 길이를 가진 배열 생성
-let number = new Array(10);
+let number = new Array(10);   //소괄호()
 console.log(number.length);
 
 //저장
@@ -27,8 +27,8 @@ document.write(number + " ");
 //문자셋 - 아스키코드(128개) 'A' = 65
 //코드값으로 저장 후 출력 - 아스키코드
 let alphabet = new Array(26);
-let ch = 'ABCD';
-console.log(ch.charCodeAt(3));
+let ch = 'ABCD';    //문자열 배열
+// console.log(ch.charCodeAt(3));
 ch = ch.charCodeAt(); //()의 인덱스값을 지정하지 않으면 기본값인 0이 들어감
 
 //저장

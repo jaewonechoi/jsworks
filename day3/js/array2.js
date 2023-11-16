@@ -43,6 +43,6 @@ for(let i = 0; i < num.length; i++){
 }
 avg = sum / num.length;   //평균 = 합계 / 개수
 console.log(sum);
-console.log(avg.toFixed(2));
+console.log(avg.toFixed(2));  //소수점 (2)자리까지 출력
 
 

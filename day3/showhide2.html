@@ -9,10 +9,13 @@
       margin: 10px 2px;
       padding: 5px;
     }
+    img{
+      display: none;
+    }
   </style>
 </head>
 <body>
-  <button onclick="showHide()" id="button">숨기기</button>
+  <button onclick="showHide()" id="button">보이기</button>
   <div>
     <img src="images/flower.jpg" alt="꽃" id="pic">
   </div>
@@ -25,14 +28,14 @@
       //상태를 바꿔놓아야 함
       let pic = document.getElementById("pic");
       let btn = document.getElementById("button");
-      if(sw === true){
-        pic.style.display = "none";
+      if(sw){
+        pic.style.display = "block";
         //.innerText
-        btn.innerText = "보이기";
+        btn.innerText = "숨기기";
         sw = false;
       }else{
-        pic.style.display = "block";
-        btn.innerText = "숨기기";
+        pic.style.display = "none";
+        btn.innerText = "보이기";
         sw = true;
       }
     }
