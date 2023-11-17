@@ -12,7 +12,7 @@ function myWatch(){
   // watch.style.color = "blue";
 
   //replace
-  if(time >= 12){
+  if(NOW.getHours() <= 12){
     watch.innerHTML = time.replace("오전", "am");
   }else{
     watch.innerHTML = time.replace("오후", "pm");
