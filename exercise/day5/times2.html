@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+  </style>
   <title>3의 배수 찾기</title>
 </head>
 <body>
   <h1>3의 배수 찾기</h1>
-  
+  <p id="show"></p>
   <script>
     let n = prompt("몇까지의 배수를 구할까요?"); //몇까지인지 변수에 할당
     let count = 0;  //전역 변수 누적
@@ -17,13 +20,17 @@
     }else if(isNaN(n)){
       document.write("숫자를 입력해주세요.")
     }else{
-    // n = parseInt(n);
+    n = parseInt(n);
+    let numbers = [];
     for(let i = 1; i <= n; i++){
       if(i % 3 == 0 ){
-        document.write(i + ", ");
+        numbers.push(i);
+        // document.write(i + ", ");
         count++;
       }
     }
+    
+    document.getElementById("show").innerHTML = numbers;
     document.write("<br>"+ n + "까지 3의 배수의 개수 : " + count);
     }
   </script>
